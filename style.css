@@ -1,0 +1,442 @@
+@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
+
+/*
+Estruturas e estilos iniciais
+*/
+
+body {
+  margin: 0;
+  background-color: white;
+  color: #83677b;
+  font-family: fantasy;
+  transition: .36s;
+}
+
+.navi {
+  background-color: #adadad;
+  overflow: hidden;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+}
+
+.navi h1 {
+  display: block;
+  float: left;
+  padding: 0.6em 1em 0.6em 1em;
+  margin: 0;
+  color: #501b1d;
+  font-family: "Brush Script MT";
+}
+
+.navi a {
+  text-decoration: underline;
+  color: #501b1d;
+  padding: 0.2em 0 0 0;
+  display: block;
+  float: left;
+  margin: 1.6em;
+  transition: 0.36s;
+}
+
+.navi a:hover {
+  /*
+  text-decoration: underline;
+  text-decoration-color: #DF6C4F;
+  */
+  color: #df6c4f;
+}
+
+.button {
+  background: none;
+  background-color: white;
+  border: 0.1em solid;
+  border-color: black;
+  width: 3em;
+  height: 3em;
+  overflow: hidden;
+  padding: 0;
+  border-radius: 3em;
+  position: fixed;
+  display: block;
+  right: 0;
+  margin: 1.4em 1.4em 0 0;
+}
+
+.button img {
+  content: url(https://www.shutterstock.com/image-vector/sun-ocean-icon-vector-260nw-777360196.jpg);
+  width: 2.9em;
+  height: auto;
+  overflow: hidden;
+}
+
+.button:hover {
+  border-color: white;
+}
+
+.button:active {
+  opacity: 0.6;
+}
+
+.principal {
+  padding-left: 0.8em;
+  padding-top: 1.8em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.principal h2 {
+  padding-top: 4.2em;
+  margin-top: -4.2em;
+  color: #83677b;
+}
+
+#sobremim {
+  padding-top: 7.2em;
+}
+
+#oogway {
+  padding: 0.6em;
+  margin-bottom: 3.6em;
+}
+
+#lista2 {
+  margin-bottom: 4.2em;
+}
+
+.filmes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 4em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 17em;
+  padding: 1.2em;
+  margin: 0.8em;
+  margin-top: 0;
+  position: relative;
+}
+
+.container div {
+  border: solid 0.16em #df6c4f;
+  border-radius: 0.5em;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.container h3 {
+  height: 1.2em;
+  margin-top: 1.2em;
+}
+
+.container p {
+  padding: 0.8em;
+}
+
+#usr_img {
+  margin: 2em;
+}
+
+/*
+Tema escuro
+*/
+
+.dark_body {
+  background-color: black;
+  color: gray;
+}
+
+.dark_navi {
+  /*background-color: #61892F;*/
+  background-color: #1c1c1c;
+}
+
+.dark_navi h1 {
+  color: white;
+  background-color: transparent;
+
+  font-family: "Exo 2", sans-serif;
+  font-size: 1.3em;
+  text-transform: uppercase;
+
+  border: solid 2px;
+  border-radius: 0.2em;
+
+  margin: 0.5em;
+
+  animation: shine_title 2s forwards, flicker 3s infinite;
+}
+
+.dark_navi a {
+  font-family: "Exo 2", sans-serif;
+  color: #ff6bab;   
+}
+
+.dark_navi a:hover {
+  /*
+  text-decoration: underline;
+  text-decoration-color: #DF6C4F;
+  */
+  animation: shine_text_pink .6s forwards, flicker 3s infinite;
+}
+
+.dark_button img {
+  content: url(https://static.vecteezy.com/system/resources/thumbnails/010/072/533/small/moon-and-stars-icon-free-vector.jpg);
+  width: 3.6em;
+  margin-left: -0.3em;
+  margin-top: -0.1em;
+}
+
+.dark_principal h2 {
+  color: white;
+  animation: shine_text_pink 2s forwards, flicker 3s infinite;
+}
+
+.dark_filmes .container div {
+  /*border-color: #61892F;*/
+  animation: shine_border_blue 2s forwards, flicker 3s infinite;
+}
+
+.dark_body #fast-flicker1 {
+  animation: shine_text_pink 2s forwards, blynk 4s .5s infinite;
+}
+
+.dark_body #fast-flicker2 {
+  animation: shine_text_pink 2s forwards, blynk 5s .5s infinite;
+}
+
+.dark_body #fast-border1 {
+  animation: shine_border_blue 2s forwards, blynk_border 1s 5s infinite;
+}
+
+/*
+Outros
+*/
+
+@keyframes blynk {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+  28%,
+  33% {
+    color: #ff65bd;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: #ff2483;
+    text-shadow: none;
+  }
+}
+
+@keyframes blynk_border {
+  0%,
+  22%,
+  36%,
+  75% {
+    border-color: rgb(113, 189, 255);
+    box-shadow: 0 0 0.25rem #e6fbff, inset 0 0 0.25rem #e6fbff,
+      0 0 .5rem #658bff, inset 0 0 .5rem #658bff,
+      0 0 1rem #2469ff, inset 0 0 1rem #2469ff;
+  }
+  28%,
+  33% {
+    border-color: #658bff;
+    box-shadow: none;
+  }
+  82%,
+  97% {
+    border-color: #2469ff;
+    box-shadow: none;
+  }
+}
+
+@keyframes shine_text_pink {
+  0% {
+    /*color: #6b1839;*/
+    color: white;
+    text-shadow: none;
+  }
+  100% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+}
+
+@keyframes shine_title {
+  0% {
+    /*color: #6b1839;*/
+    color: white;
+    text-shadow: none;
+
+    border-color: white;
+    box-shadow: none;
+  }
+  100% {
+    color: rgb(113, 189, 255);
+    text-shadow: 0 0 0.6rem #e6fbff, 0 0 1.5rem #658bff,
+      -0.2rem 0.1rem 1rem #658bff, 0.2rem 0.1rem 1rem #658bff,
+      0 -0.5rem 2rem #2469ff, 0 0.5rem 3rem #2457ff;
+
+    border-color: rgb(113, 189, 255);
+    box-shadow: 0 0 0.25rem #e6fbff, inset 0 0 0.25rem #e6fbff,
+      0 0 .5rem #658bff, inset 0 0 .5rem #658bff,
+      0 0 1rem #2469ff, inset 0 0 1rem #2469ff;
+  }
+}
+
+@keyframes shine_border_blue {
+  0% {
+    /*color: #6b1839;*/
+    border-color: white;
+    box-shadow: none;
+  }
+  100% {
+    border-color: rgb(113, 189, 255);
+    box-shadow: 0 0 0.25rem #e6fbff, inset 0 0 0.25rem #e6fbff,
+      0 0 .5rem #658bff, inset 0 0 .5rem #658bff,
+      0 0 1rem #2469ff, inset 0 0 1rem #2469ff;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 0.94;
+  }
+
+  28% {
+    opacity: 0.98;
+  }
+
+  37% {
+    opacity: 0.93;
+  }
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
